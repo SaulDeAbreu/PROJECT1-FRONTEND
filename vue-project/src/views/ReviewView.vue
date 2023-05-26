@@ -1,5 +1,5 @@
 <template>
-  <main>
+  <!-- <main> -->
     <section class="container">
       <form @submit.prevent="submitForm">
         <label for="nombre">Nombre:</label>
@@ -26,9 +26,10 @@
         <p>{{ comentario.comentario }}</p>
         <p>Calificación: {{ comentario.estrellas }} estrellas</p>
         <button @click="borrarComentario(comentario.id)">Borrar</button>
+        <hr>
       </div>
     </div>
-  </main>
+  <!-- </main> -->
 </template>
 
 <script>
@@ -37,6 +38,7 @@ import { agregarComentario, suscribirseComentarios, borrarComentarioFirestore } 
 
 export default {
   setup() {
+    //ref dar valor a uma variavel reativa 
     const nombre = ref('');
     const comentario = ref('');
     const estrellas = ref('');
@@ -48,10 +50,9 @@ export default {
         comentario: comentario.value,
         estrellas: estrellas.value
       };
-
       await agregarComentario(comentarioData);
 
-      // Limpiar los campos del formulario después de enviar
+      // limpa os campos do formulario depois de enviar
       nombre.value = '';
       comentario.value = '';
       estrellas.value = '';

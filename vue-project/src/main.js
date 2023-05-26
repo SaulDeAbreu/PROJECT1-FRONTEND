@@ -11,18 +11,4 @@ app.use(createPinia())
 app.use(router)
 app.mount('#app')
 
-// details 
-// import { createRouter, createWebHistory } from "vue-router";
-// import SearchCoaktailsView from "@/views/SearchCocktailsView.vue";
-// import CocktailsViews from "@/views/CocktailsView.vue";
-
-// const routes = [
-//   { path: "/", component: SearchCoaktailsView },
-//   { path: "/cocktails/:id", component: CocktailsViews },
-// ];
-// const route = createRouter({
-//   history: createWebHistory(),
-//   routes,
-// });
-// app.use(route);
 

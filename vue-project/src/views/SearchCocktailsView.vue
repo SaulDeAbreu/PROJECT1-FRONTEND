@@ -17,6 +17,7 @@
 									<p class="description">{{ bebida.strInstructions }}</p>
 									<button class="btn-custom-menu" @click="showCocktailDetails(bebida)">Details</button>
 									<button class="btn-cart-menu"><span class="bi bi-cart-menu"></span> Add to cart</button>
+									<hr>
 								</li>
 							</ul>
 						</li>
@@ -39,14 +40,15 @@
 
 <script setup>
 import { ref } from 'vue';
+// para acceder al enrutador de Vue.
 import { useRouter } from 'vue-router';
 
-const pesquisa = ref('');
-const lista = ref([]);
-const listaBebidas = ref([]);
-const router = useRouter();
+const pesquisa = ref('');//valor de la pesquiça
+const lista = ref([]);//uma lista de imágenes.
+const listaBebidas = ref([]);//lista de objetos de coaktails 
+const router = useRouter();//acceder al enrutador de Vue, para aceder a pagina de 'details'
 
-const getLista = () => {
+const getLista = () => {//filtra as bebidas atraves do input
 	fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink')
 		.then(data => data.json())
 		.then(res => {
@@ -55,14 +57,12 @@ const getLista = () => {
 };
 
 fetch('https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=Ordinary_Drink')
-	.then(data => data.json())
+	.then(data => data.json())//procura os 'Ordinary Drinks' 
 	.then(res => {
 		listaBebidas.value = res.drinks;
 	}); 
 
-const showCocktailDetails = (cocktail) => {
+const showCocktailDetails = (cocktail) => {//redirigir atraves do id 
 	router.push({ name: 'cocktails', params: { id: cocktail.idDrink } });
 };
-
-
 </script>

@@ -2,7 +2,9 @@
   <section class="container">
     <h1>{{ cocktailName }}</h1>
     <img :src="cocktailImage" alt="Nombre del Cocktail" width="200" height="150">
+    <br>
     <ul>
+      <hr>
       <li v-for="ingredient in cocktailIngredients" :key="ingredient.name">
         {{ ingredient.name }}
         <img :src="ingredient.image" alt="" width="200" height="150">

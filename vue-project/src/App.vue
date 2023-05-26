@@ -9,11 +9,8 @@ import { RouterLink, RouterView } from 'vue-router'
         <nav>
           <RouterLink class="btn btn-outline-primary btn-custom" to="/">Home</RouterLink>
           <RouterLink class="btn btn-outline-primary btn-custom" to="/searchcocktails">Search Cocktails</RouterLink>
-
-          <!-- la pagina de cocktails tiene que salir del boton , y tiene que entrar en la pagina de serarch cocktail para que cuando se busque rediriga  -->
           <!-- <RouterLink class="btn btn-outline-primary btn-custom" to="/cocktails">Cocktail</RouterLink> -->
           <RouterLink class="btn btn-outline-primary btn-custom" to="/review">Review</RouterLink>
-          <!-- Después de la etiqueta </form> -->
           <!-- Iniciar sesión -->
           <button type="button" class="btn btn-outline-primary btn-custom" data-bs-toggle="modal" data-bs-target="#login">
             Log in
@@ -34,7 +31,7 @@ import { RouterLink, RouterView } from 'vue-router'
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Regístrate</h5>
+                <h5 class="modal-title text-black">Regístrate</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -62,12 +59,14 @@ import { RouterLink, RouterView } from 'vue-router'
             </div>
           </div>
         </div>
+
+
         <!-- //// Modal - Iniciar sesión //// -->
         <div class="modal fade" id="login">
           <div class="modal-dialog">
             <div class="modal-content">
               <div class="modal-header">
-                <h5 class="modal-title">Inicia de sesión</h5>
+                <h5 class="modal-title text-black">Inicia de sesión</h5>
                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
               </div>
               <div class="modal-body">
@@ -115,6 +114,7 @@ import { RouterLink, RouterView } from 'vue-router'
     </footer>
   </div>
 </template>
+
 
 <script>
 import {
